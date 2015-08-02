@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select</title>
+</head>
+<body>
+    <script>
+
+    //选择排序
+    //每次循环选择最小的数放在最前面
+    
+    function CArray(arr) {
+        this.arr = arr;
+    }
+
+
+    var arr = [10, 45, 24, 32, 100, 2, 34, 35, 32, 54];
+    function selectionSort(arr) {
+        var len = arr.length,
+            min, i, j, index;
+            
+        for(i = 0; i < len; i++) {
+            min = i;
+
+            for(j = len-1; j > i; j--) {
+
+               if(arr[min] > arr[j]) {
+                   min = j;
+               }
+            }
+            index = arr[i];
+            arr[i] = arr[min];
+            arr[min] = index;
+        }
+        return arr;
+    }
+    console.log(selectionSort(arr));
+    </script>
+</body>
+</html>
